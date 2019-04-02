@@ -8,7 +8,9 @@
         <div class="spacer">
             <h2>Buttons</h2>
             <p>The button component uses props to set the type, state and theme of a button.</p>
-            <VButton></VButton>
+            <VButton button-text="Default button"></VButton>
+            <VButton theme="filled" button-text="Filled button with colorway" colorway='blue'></VButton>
+            <VButton theme="outlined" button-text="Outlined button with colorway" colorway='blue'></VButton>
         </div>
         <div class="spacer">
             <h2>Typography</h2>
