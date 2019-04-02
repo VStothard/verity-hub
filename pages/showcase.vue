@@ -6,15 +6,20 @@
             <p>The project has been built using Nuxt.js, Tailwind, Contentful &amp; Netlify.</p>
         </div>
         <div class="spacer">
+            <h2>Colors</h2>
+            <p>The colors used in this project are:</p>
+            <ColorSpread></ColorSpread>
+        </div>
+        <div class="spacer">
+            <h2>Typography</h2>
+            <p>Typography throughout the site will be set gloablly using a base scss file.</p>
+        </div>
+        <div class="spacer">
             <h2>Buttons</h2>
             <p>The button component uses props to set the type, state and theme of a button.</p>
             <VButton button-text="Default button"></VButton>
             <VButton theme="filled" button-text="Filled button with colorway" colorway='blue'></VButton>
             <VButton theme="outlined" button-text="Outlined button with colorway" colorway='blue'></VButton>
-        </div>
-        <div class="spacer">
-            <h2>Typography</h2>
-            <p>Typography throughout the site will be set gloablly using a base scss file.</p>
         </div>
         <div class="spacer">
             <h2>Preview tile</h2>
