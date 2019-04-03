@@ -16,11 +16,11 @@ export default {
         },
         theme: {
             type: String,
-            default: 'filled'
+            default: 'filled' // options 'filled', 'outlined'
         },
         colorway: {
             type: String,
-            default: 'grey'
+            default: 'grey' // options - any color defined in tailwind.js, the color way should be just the base name e.g 'peach' rather than 'peach-500'
         }
     },
     computed: {
