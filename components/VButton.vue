@@ -1,5 +1,5 @@
 <template>
-    <div class="spacer inline-block">
+    <div class="inline-block">
         <button :type="type" :class="`p-4 font-bold ${themeClasses}`">{{buttonText}}</button>
     </div>
 </template>
@@ -25,13 +25,13 @@ export default {
     },
     computed: {
         themeClasses() {
-            const base = `border-2 border-${this.colorway} bg-${this.colorway} hover:bg-${this.colorway}-dark hover:border-${this.colorway}-dark text-white`
+            const base = `border-2 border-${this.colorway}-500 bg-${this.colorway}-500 hover:bg-${this.colorway}-400 hover:border-${this.colorway}-400 text-white`
 
             switch (this.theme) {
                 case 'filled': 
                     return base
                 case 'outlined':
-                    return `border-2 border-${this.colorway} text-${this.colorway} hover:border-${this.colorway}-dark hover:bg-${this.colorway}-dark hover:text-white`
+                    return `border-2 border-${this.colorway}-500 text-${this.colorway}-500 hover:border-${this.colorway}-400 hover:bg-${this.colorway}-400 hover:text-white`
                 default:
                     return base
             }
