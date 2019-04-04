@@ -32,12 +32,34 @@
             <h2>Preview tile</h2>
             <p>The blog preview component allows the user to set a thumbnail image, heading, intro text and some other details about a piece of content.</p>
             <p>By clicking on the tile, the user will be taken to the relevant piece of content.</p>
-            <PreviewTile 
-                content-title="Some content"
-                content-intro="A bit of information about this content."
-                content-date="01/08/1993"
-                content-category="Blog post"
-            ></PreviewTile>
+            <div class="flex justify-between mt-8">
+                <PreviewTile 
+                    content-title="Some content"
+                    content-intro="A bit of information about this content."
+                    content-date="01/08/1993"
+                    content-category="Blog post"
+                ></PreviewTile>
+                <PreviewTile 
+                    content-title="Some content"
+                    content-intro="A bit of information about this content."
+                    content-date="01/08/1993"
+                    content-category="Blog post"
+                ></PreviewTile>
+                <PreviewTile 
+                    content-title="Some content"
+                    content-intro="A bit of information about this content."
+                    content-date="01/08/1993"
+                    content-category="Blog post"
+                ></PreviewTile>
+            </div>
+        </div>
+        <div class="spacer">
+            <h2>Contact form</h2>
+            <ContactForm imgAlt="an image alongside the contact form!"></ContactForm>
+        </div>
+        <div class="spacer">
+            <h2>Main Navigation</h2>
+            <MainNavigation></MainNavigation>
         </div>
     </div>
 </template>
