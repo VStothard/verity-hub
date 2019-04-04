@@ -6,7 +6,7 @@
     <h2 v-if="contentTitle">{{contentTitle}}</h2>
     <p v-if="contentDate">{{contentDate}}</p>
     <p v-if="contentTags">{{contentTags}}</p>
-    <p v-if="contentIntro">{{contentIntro}}</p>TODO: This will be the preview tile
+    <p v-if="contentIntro">{{contentIntro}}</p>
   </div>
 </template>
 <script>
