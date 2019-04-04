@@ -41,22 +41,12 @@
       <p>By clicking on the tile, the user will be taken to the relevant piece of content.</p>
       <div class="flex justify-between mt-8">
         <PreviewTile
-          content-title="Some content"
-          content-intro="A bit of information about this content."
-          content-date="01/08/1993"
-          content-category="Blog post"
-        ></PreviewTile>
-        <PreviewTile
-          content-title="Some content"
-          content-intro="A bit of information about this content."
-          content-date="01/08/1993"
-          content-category="Blog post"
-        ></PreviewTile>
-        <PreviewTile
-          content-title="Some content"
-          content-intro="A bit of information about this content."
-          content-date="01/08/1993"
-          content-category="Blog post"
+          v-for="(story, i) in stories"
+          :key="i"
+          :content-title="story.fields.title"
+          :content-intro="story.fields.description"
+          :content-date="story.fields.publishDate"
+          :content-tags="story.fields.tags"
         ></PreviewTile>
       </div>
     </div>
@@ -76,6 +66,24 @@
     </div>
   </div>
 </template>
+<script>
+import contentful from "~/plugins/contentful.js";
+export default {
+  data() {
+    return {
+      stories: []
+    };
+  },
+  async mounted() {
+    //Todo move this to Vuex store
+    const allPosts = await contentful.getEntries({ content_type: "blogPost" });
+
+    this.stories = allPosts.items;
+
+    await console.log("mounted!", this.stories);
+  }
+};
+</script>
 <style lang="scss">
 .spacer {
   @apply mt-8;
