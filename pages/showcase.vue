@@ -40,14 +40,7 @@
       <p>The blog preview component allows the user to set a thumbnail image, heading, intro text and some other details about a piece of content.</p>
       <p>By clicking on the tile, the user will be taken to the relevant piece of content.</p>
       <div class="flex justify-between mt-8">
-        <PreviewTile
-          v-for="(story, i) in stories"
-          :key="i"
-          :content-title="story.fields.title"
-          :content-intro="story.fields.description"
-          :content-date="story.fields.publishDate"
-          :content-tags="story.fields.tags"
-        ></PreviewTile>
+        <PreviewTile v-for="(story, i) in stories" :key="i" :content="story"></PreviewTile>
       </div>
     </div>
     <div class="spacer">
