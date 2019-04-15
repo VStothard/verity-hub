@@ -20,10 +20,11 @@ export default {
       stories: []
     };
   },
-  async mounted(store) {
+  async mounted() {
     // get blog posts
-    const posts = await store.dispatch("blog/getAllPosts");
-    console.log(posts, 2000);
+    const posts = await this.$store.dispatch("blog/getAllPosts");
+    this.stories = this.$store.getters["blog/getAllPosts"];
+
     // const allPosts = await contentful.getEntries({ content_type: "blogPost" });
     // this.stories = allPosts.items;
   }

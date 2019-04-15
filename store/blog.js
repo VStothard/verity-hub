@@ -1,4 +1,5 @@
 import Vuex from 'vuex'
+import contentful from "~/plugins/contentful.js";
 
 const state = () => {
     allPosts: []
@@ -6,9 +7,8 @@ const state = () => {
 
 const getters = {
     getAllPosts: state => {
-        return {
-            state.allPosts
-        }
+        return state.allPosts
+        return 'test'
     }
 }
 
@@ -25,4 +25,8 @@ const mutations = {
     setBlogPosts(state, data) {
         state.allPosts = data
     }
+}
+
+export default {
+    state, getters, actions, mutations
 }
