@@ -20,10 +20,16 @@ export default {
       stories: []
     };
   },
-  async mounted() {
+  async mounted(store) {
     // get blog posts
-    const allPosts = await contentful.getEntries({ content_type: "blogPost" });
-    this.stories = allPosts.items;
+    const posts = await store.dispatch("blog/getAllPosts");
+    console.log(posts, 2000);
+    // const allPosts = await contentful.getEntries({ content_type: "blogPost" });
+    // this.stories = allPosts.items;
   }
+  // async asyncData(context) {
+  //   const allPosts = await contentful.getEntries({ content_type: "blogPost" });
+  //   return { stories: allPosts.items };
+  // }
 };
 </script>
