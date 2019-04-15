@@ -1,7 +1,6 @@
 <template>
   <div>
-    <!-- <pre>{{content}}</pre> -->
-    <nuxt-link :to="`/post`">
+    <nuxt-link :to="{ name: 'blog-slug', params: { slug: content.fields.slug }}" class="title">
       <div class="w-full h-64 bg-cover bg-center" :style="`background-image: url('${bgImage}')`"></div>
       <h2 v-if="content.fields.title">{{content.fields.title}}</h2>
       <p v-if="content.fields.publishDate">{{content.fields.publishDate}}</p>

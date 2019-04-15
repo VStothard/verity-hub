@@ -21,16 +21,10 @@ export default {
     };
   },
   async mounted() {
+    // Todo: move to asyncData
     // get blog posts
     const posts = await this.$store.dispatch("blog/getAllPosts");
     this.stories = this.$store.getters["blog/getAllPosts"];
-
-    // const allPosts = await contentful.getEntries({ content_type: "blogPost" });
-    // this.stories = allPosts.items;
   }
-  // async asyncData(context) {
-  //   const allPosts = await contentful.getEntries({ content_type: "blogPost" });
-  //   return { stories: allPosts.items };
-  // }
 };
 </script>
