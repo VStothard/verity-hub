@@ -1,12 +1,12 @@
 <template>
   <div>
-    <nuxt-link :to="contentLink">
+    <nuxt-link :to="{ name: 'blog-slug', params: { slug: content.fields.slug }}" class="title">
       <div class="w-full h-64 bg-cover bg-center" :style="`background-image: url('${bgImage}')`"></div>
+      <h2 v-if="content.fields.title">{{content.fields.title}}</h2>
+      <p v-if="content.fields.publishDate">{{content.fields.publishDate}}</p>
+      <p v-if="content.fields.tags">{{content.fields.tags}}</p>
+      <p v-if="content.fields.description">{{content.fields.description}}</p>
     </nuxt-link>
-    <h2 v-if="contentTitle">{{contentTitle}}</h2>
-    <p v-if="contentDate">{{contentDate}}</p>
-    <p v-if="contentTags">{{contentTags}}</p>
-    <p v-if="contentIntro">{{contentIntro}}</p>
   </div>
 </template>
 <script>
@@ -16,21 +16,8 @@ export default {
       type: String,
       default: "https://source.unsplash.com/random"
     },
-    contentLink: {
-      type: String,
-      default: "/"
-    },
-    contentTitle: {
-      type: String
-    },
-    contentIntro: {
-      type: String
-    },
-    contentDate: {
-      type: String
-    },
-    contentTags: {
-      type: Array
+    content: {
+      type: Object
     }
   }
 };
