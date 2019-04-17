@@ -1,7 +1,12 @@
 <template>
   <div>
     <template v-if="courses.length > 0">
-      <PreviewTile v-for="(course, i) in courses" :key="i" :content="course"></PreviewTile>
+      <PreviewTile
+        v-for="(course, i) in courses"
+        :key="i"
+        :content="course"
+        slug-name="course-slug"
+      ></PreviewTile>
     </template>
     <template v-else>Fetching courses...</template>
   </div>
