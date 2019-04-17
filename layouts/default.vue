@@ -5,10 +5,11 @@
       <div class="w-full lg:w-1/4 relative">
         <side-nav/>
       </div>
-      <div class="w-full lg:w-3/4 p-2">
-        <div class="shadow-md rounded lg:mr-8 p-8">
+      <div class="w-full lg:w-3/4 p-2 lg:mr-8">
+        <div class="shadow-md rounded p-8">
           <nuxt/>
         </div>
+        <VFooter></VFooter>
       </div>
     </div>
   </div>

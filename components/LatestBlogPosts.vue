@@ -1,11 +1,14 @@
 <template>
-  <div class="flex flex-wrap">
-    <PreviewTile
-      v-for="(story, i) in stories"
-      :key="i"
-      :content="story"
-      class="w-100 md:w-1/2 pb-8 tile-margin"
-    ></PreviewTile>
+  <div>
+    <div v-if="stories.length > 0" class="flex flex-wrap">
+      <PreviewTile
+        v-for="(story, i) in stories"
+        :key="i"
+        :content="story"
+        class="w-100 md:w-1/2 pb-8 tile-margin"
+      ></PreviewTile>
+    </div>
+    <div v-else>fetching stories...</div>
   </div>
 </template>
 
@@ -22,7 +25,6 @@ export default {
     // get blog posts
     const posts = await this.$store.dispatch("blog/getAllPosts");
     this.stories = this.$store.getters["blog/getAllPosts"];
-    console.log(this.stories, 3000);
   }
 };
 </script>

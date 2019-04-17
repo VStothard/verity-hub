@@ -1,6 +1,9 @@
 <template>
   <div>
-    <PreviewTile v-for="(course, i) in courses" :key="i" :content="course"></PreviewTile>
+    <template v-if="courses.length > 0">
+      <PreviewTile v-for="(course, i) in courses" :key="i" :content="course"></PreviewTile>
+    </template>
+    <template v-else>Fetching courses...</template>
   </div>
 </template>
 
@@ -17,7 +20,6 @@ export default {
     // get courses
     const courses = await this.$store.dispatch("courses/getAllCourses");
     this.courses = this.$store.getters["courses/getAllCourses"];
-    console.log(courses, 3000);
   }
 };
 </script>

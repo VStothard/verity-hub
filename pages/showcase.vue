@@ -39,8 +39,8 @@
       <h2>Preview tile</h2>
       <p>The blog preview component allows the user to set a thumbnail image, heading, intro text and some other details about a piece of content.</p>
       <p>By clicking on the tile, the user will be taken to the relevant piece of content.</p>
-      <div class="flex justify-between mt-8">
-        <PreviewTile v-for="(story, i) in stories" :key="i" :content="story"></PreviewTile>
+      <div class="flex flex-wrap justify-between mt-8">
+        <PreviewTile v-for="(story, i) in stories" :key="i" :content="story" class="w-100 md:w-1/2"></PreviewTile>
       </div>
     </div>
     <div class="spacer">
@@ -52,10 +52,6 @@
           class="w-full max-w-xl"
         ></ContactForm>
       </div>
-    </div>
-    <div class="spacer">
-      <h2>Main Navigation</h2>
-      <MainNavigation></MainNavigation>
     </div>
   </div>
 </template>
@@ -72,8 +68,6 @@ export default {
     const allPosts = await contentful.getEntries({ content_type: "blogPost" });
 
     this.stories = allPosts.items;
-
-    await console.log("mounted!", this.stories);
   }
 };
 </script>
