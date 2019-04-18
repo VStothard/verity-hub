@@ -1,4 +1,5 @@
 import pkg from './package'
+import axios from 'axios'
 
 require('dotenv').config()
 
@@ -43,8 +44,9 @@ export default {
   /*
   ** Nuxt.js modules
   */
-  modules: [
-  ],
+ modules: [
+  '@nuxtjs/axios',
+],
 
   /*
   ** Build configuration
@@ -54,11 +56,30 @@ export default {
     ** You can extend webpack config here
     */
     extend(config, ctx) {
+        if (ctx.isDev && ctx.isClient) {
+            config.devtool = '#source-map'
+        }
     }
   },
   env: {
     CONTENTFUL_SPACE_ID: process.env.CONTENTFUL_SPACE_ID,
+    CONTENTFUL_ACCESS_TOKEN: process.env.CONTENTFUL_ACCESS_TOKEN,
     CONTENTFUL_ACCESS_TOKEN: process.env.CONTENTFUL_ACCESS_TOKEN
+  },
+  generate: {
+    routes: function () {
+      return axios.get(`/spaces/${process.env.CONTENTFUL_SPACE_ID}/environments/master/entries?content_type=blogPost?access_token=${process.env.CONTENTFUL_SPACE_ID}`)
+      .then((res) => {
+        return res.data.map((blog) => {
+          return '/blog/' + blog.id
+        })
+      })
+    }
+  },
+
+  axios: {
+    // proxyHeaders: false
+    baseURL: 'https://cdn.contentful.com'
   }
 
 }
