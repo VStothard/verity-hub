@@ -16,7 +16,6 @@ const actions = {
     async getAllPosts({ commit }) {
         const allPosts = await contentful.getEntries({ content_type: "blogPost" });
         commit('setBlogPosts', allPosts.items)
-        console.log(allPosts, 2000)
         return { stories: allPosts.items }
     }
 }
