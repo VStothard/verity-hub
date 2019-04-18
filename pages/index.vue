@@ -1,8 +1,20 @@
 <template>
   <div>
-    <LatestBlogPosts></LatestBlogPosts>
+    <LatestBlogPosts :stories="stories.stories"></LatestBlogPosts>
   </div>
 </template>
+
+<script>
+export default {
+    async asyncData(context) {
+        let stories = await context.store.dispatch("blog/getAllPosts")
+
+        return {
+           stories
+        }
+    }
+};
+</script>
 
 <style>
 h1,
@@ -16,13 +28,3 @@ a {
   text-decoration: none;
 }
 </style>
-
-<script>
-export default {
-  computed: {
-    linkBase() {
-      return `border border-red`;
-    }
-  }
-};
-</script>

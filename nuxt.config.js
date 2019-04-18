@@ -56,6 +56,9 @@ export default {
     ** You can extend webpack config here
     */
     extend(config, ctx) {
+        if (ctx.isDev && ctx.isClient) {
+            config.devtool = '#source-map'
+        }
     }
   },
   env: {
