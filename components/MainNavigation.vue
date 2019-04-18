@@ -5,7 +5,7 @@
         <nuxt-link to="/portfolio" class="p-4 link-base">Portfolio</nuxt-link>
       </div>
       <div>
-        <nuxt-link to="/blog" class="p-4 link-base">Blog</nuxt-link>
+        <nuxt-link to="/" class="p-4 link-base">Blog</nuxt-link>
       </div>
       <div>
         <nuxt-link to="/courses" class="p-4 link-base">Courses</nuxt-link>

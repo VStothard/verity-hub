@@ -1,7 +1,6 @@
 <template>
   <div>
     <div v-if="!!stories.length" class="flex flex-wrap">
-        <pre>{{stories}}</pre>
       <PreviewTile
         v-for="(story, i) in stories"
         :key="i"
@@ -16,11 +15,7 @@
 <script>
 import contentful from "~/plugins/contentful.js";
 export default {
-    props: ['stories'],
-    mounted() {
-        let xxxx = this.stories
-        debugger
-    }
+    props: ['stories']
 };
 </script>
 
