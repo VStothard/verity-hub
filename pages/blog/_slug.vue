@@ -1,6 +1,6 @@
 <template>
   <div>
-    <nuxt-link to="/blog" class="no-underline">back to posts</nuxt-link>
+    <nuxt-link to="/" class="no-underline">back to posts</nuxt-link>
 
     <div class="w-full h-64 bg-cover bg-center" :style="`background-image: url('${bgImage}')`"></div>
     <h2 v-if="content.fields.title">{{content.fields.title}}</h2>
