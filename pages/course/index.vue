@@ -1,14 +1,16 @@
 <template>
   <div>
-    <template v-if="!!courses.length">
+    <h2 class="text-base text-grey-500 font-semibold uppercase mb-6 mt-4 text-left">Web development courses</h2>
+    <div v-if="!!courses.length" class="flex flex-wrap">
       <PreviewTile
         v-for="(course, i) in courses"
         :key="i"
         :content="course"
         slug-name="course-slug"
+        class="w-100 md:w-1/2 pb-8 tile-margin hover-tile"
       ></PreviewTile>
-    </template>
-    <template v-else>Fetching courses...</template>
+    </div>
+    <div v-else>fetching courses...</div>
   </div>
 </template>
 <script>

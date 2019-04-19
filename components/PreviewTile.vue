@@ -6,7 +6,7 @@
     >
       <div id='tile-bg' class="w-full h-64 bg-cover bg-center rounded" :style="`background-image: url('${bgImage}')`"></div>
       <p v-if="content.fields.publishDate" class="text-grey-500 text-sm mt-4">{{content.fields.publishDate | date}}</p>
-      <h2 v-if="content.fields.title" class="mt-2">{{content.fields.title}}</h2>
+      <h2 v-if="content.fields.title" :class="{ 'mt-2' : content.fields.publishDate, 'mt-4' : !content.fields.publishDate, }">{{content.fields.title}}</h2>
       <p v-if="content.fields.description">{{content.fields.description}}</p>
       <p class="text-grey-400 mt-4 text-sm">
         <span v-for="(tag, i) in content.fields.tags" :key="i">

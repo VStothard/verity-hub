@@ -77,8 +77,10 @@ export default {
     routes: async function () {
       return [
         '/blog/static-sites-are-great/',
-        '/blog/hello-world',
-        '/blog/automate-with-webhooks'
+        '/blog/hello-world/',
+        '/blog/automate-with-webhooks/',
+        '/course/level-up-in-css-advanced-selectors/',
+        '/course/html-css-how-to-build-a-website/'
       ]
     }
   }
