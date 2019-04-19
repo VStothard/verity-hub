@@ -66,6 +66,11 @@ export default {
     CONTENTFUL_ACCESS_TOKEN: process.env.CONTENTFUL_ACCESS_TOKEN,
     CONTENTFUL_ACCESS_TOKEN: process.env.CONTENTFUL_ACCESS_TOKEN
   },
+  generate: {
+    routes: {
+      'static-sites-are-great'
+    }
+  }
   // generate: {
   //   routes: function () {
   //     return axios.get(`/spaces/${process.env.CONTENTFUL_SPACE_ID}/environments/master/entries?content_type=blogPost?access_token=${process.env.CONTENTFUL_SPACE_ID}`)
