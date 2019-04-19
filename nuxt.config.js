@@ -67,9 +67,9 @@ export default {
     CONTENTFUL_ACCESS_TOKEN: process.env.CONTENTFUL_ACCESS_TOKEN
   },
   generate: {
-    routes: {
-      'static-sites-are-great'
-    }
+    routes: [
+      '/blog/static-sites-are-great/'
+    ]
   }
   // generate: {
   //   routes: function () {
@@ -82,9 +82,9 @@ export default {
   //   }
   // },
 
-  axios: {
-    // proxyHeaders: false
-    baseURL: 'https://cdn.contentful.com'
-  }
+  // axios: {
+  //   // proxyHeaders: false
+  //   baseURL: 'https://cdn.contentful.com'
+  // }
 
 }
