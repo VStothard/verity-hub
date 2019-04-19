@@ -27,4 +27,9 @@ p {
 a {
   text-decoration: none;
 }
+
+.container-wide {
+  @apply px-2;
+  max-width: 1400px;
+}
 </style>

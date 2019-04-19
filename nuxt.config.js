@@ -66,11 +66,20 @@ export default {
     CONTENTFUL_ACCESS_TOKEN: process.env.CONTENTFUL_ACCESS_TOKEN,
     CONTENTFUL_ACCESS_TOKEN: process.env.CONTENTFUL_ACCESS_TOKEN
   },
+  // generate: {
+  //   routes: [
+  //     '/blog/static-sites-are-great/',
+  //     '/blog/hello-world',
+  //     '/blog/automate-with-webhooks'
+  //   ]
+  // },
   generate: {
-    routes: [
-      '/blog/static-sites-are-great/',
-      '/blog/hello-world',
-      '/blog/automate-with-webhooks'
-    ]
+    routes: async function () {
+      return [
+        '/blog/static-sites-are-great/',
+        '/blog/hello-world',
+        '/blog/automate-with-webhooks'
+      ]
+    }
   }
 }
