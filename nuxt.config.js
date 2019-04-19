@@ -68,23 +68,9 @@ export default {
   },
   generate: {
     routes: [
-      '/blog/static-sites-are-great/'
+      '/blog/static-sites-are-great/',
+      '/blog/hello-world',
+      '/blog/automate-with-webhooks'
     ]
   }
-  // generate: {
-  //   routes: function () {
-  //     return axios.get(`/spaces/${process.env.CONTENTFUL_SPACE_ID}/environments/master/entries?content_type=blogPost?access_token=${process.env.CONTENTFUL_SPACE_ID}`)
-  //     .then((res) => {
-  //       return res.data.map((blog) => {
-  //         return '/blog/' + blog.id
-  //       })
-  //     })
-  //   }
-  // },
-
-  // axios: {
-  //   // proxyHeaders: false
-  //   baseURL: 'https://cdn.contentful.com'
-  // }
-
 }
