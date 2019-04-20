@@ -34,6 +34,7 @@ export default {
     }
   },
   filters: {
+    //TODO: create plugin to allow global use
     date: function (value) {
       if (!value) return ''
       value = dayjs(value).format('DD.MM.YYYY') // display

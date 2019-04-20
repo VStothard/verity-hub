@@ -4,7 +4,7 @@
 
     <div class="w-full h-64 bg-cover bg-center" :style="`background-image: url('${bgImage}')`"></div>
     <h2 v-if="content.fields.title">{{content.fields.title}}</h2>
-    <p v-if="content.fields.publishDate">{{content.fields.publishDate}}</p>
+    <p v-if="content.fields.publishDate" class="text-grey-500 text-sm mt-4">{{content.fields.publishDate | date}}</p>
     <p v-if="content.fields.tags">{{content.fields.tags}}</p>
     <p v-if="content.fields.description">{{content.fields.body}}</p>
   </div>
