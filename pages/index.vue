@@ -16,7 +16,10 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
+body {
+  @apply text-slate-500
+}
 h1,
 h2,
 h3,
@@ -31,5 +34,20 @@ a {
 .container-wide {
   @apply px-2;
   max-width: 1400px;
+}
+
+.text-link {
+  @apply no-underline text-grey-500;
+   &-light {
+     @apply text-grey-400
+   }
+
+   &:hover {
+     @apply text-peach-500;
+   }
+}
+
+.text-link-peach {
+  @apply text-peach-500;
 }
 </style>

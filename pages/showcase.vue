@@ -75,12 +75,4 @@ export default {
 .spacer {
   @apply mt-8;
 }
-
-.text-link {
-  @apply no-underline text-peach-500;
-
-  &:hover {
-    @apply text-peach-400;
-  }
-}
-</style> 
+</style>
