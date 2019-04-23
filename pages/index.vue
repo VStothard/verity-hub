@@ -53,4 +53,8 @@ a {
 .text-link-peach {
   @apply text-peach-500;
 }
+
+.reset-link {
+    color: initial
+}
 </style>
