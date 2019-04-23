@@ -6,8 +6,8 @@
         v-for="(course, i) in courses"
         :key="i"
         :content="course"
-        slug-name="course-slug"
-        class="w-100 md:w-1/2 pb-8 tile-margin hover-tile"
+        :link-out="true"
+        class="w-full md:w-1/2 pb-8 tile-margin hover-tile"
       ></PreviewTile>
     </div>
     <div v-else>fetching courses...</div>

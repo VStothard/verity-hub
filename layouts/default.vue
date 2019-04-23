@@ -1,5 +1,5 @@
 <template>
-  <div class="w-100 min-h-screen flex flex-col">
+  <div class="w-full min-h-screen flex flex-col">
     <main-navigation></main-navigation>
     <div class="lg:flex w-full flex-grow nav-margin container-wide mx-auto">
       <div class="w-full lg:w-1/4 relative">

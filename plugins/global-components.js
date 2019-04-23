@@ -7,6 +7,7 @@ import MainNavigation from '~/components/MainNavigation.vue'
 import SideNav from '~/components/SideNav.vue'
 import ContactForm from '~/components/ContactForm.vue'
 import LatestBlogPosts from '~/components/LatestBlogPosts.vue'
+import inOutLink from '~/components/inOutLink.vue'
 import VFooter from '~/components/VFooter.vue'
 
 Vue.component('VButton', VButton)
@@ -16,5 +17,6 @@ Vue.component('MainNavigation', MainNavigation)
 Vue.component('SideNav', SideNav)
 Vue.component('ContactForm', ContactForm)
 Vue.component('LatestBlogPosts', LatestBlogPosts)
+Vue.component('inOutLink', inOutLink)
 Vue.component('VFooter', VFooter)
 

@@ -23,11 +23,14 @@ body {
 h1,
 h2,
 h3,
-h4,
+h4 {
+  @apply mb-2 mt-4
+}
 p {
   @apply mb-2;
 }
 a {
+  @apply text-peach-500;
   text-decoration: none;
 }
 

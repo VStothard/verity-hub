@@ -7,7 +7,7 @@
         :key="i"
         :content="story"
         slug-name="blog-slug"
-        class="w-100 md:w-1/2 pb-8 tile-margin hover-tile"
+        class="w-full md:w-1/2 pb-8 tile-margin hover-tile"
       ></PreviewTile>
     </div>
     <div v-else>fetching stories...</div>
