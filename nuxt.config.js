@@ -10,7 +10,7 @@ export default {
   ** Headers of the page
   */
   head: {
-    title: pkg.name,
+    title: 'Verity Stothard | Front End Developer',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -40,6 +40,7 @@ export default {
   plugins: [
     '~/plugins/global-components.js',
     '~/plugins/contentful.js',
+    '~/plugins/filters.js',
   ],
 
   /*
@@ -79,9 +80,7 @@ export default {
       return [
         '/blog/static-sites-are-great/',
         '/blog/hello-world/',
-        '/blog/automate-with-webhooks/',
-        '/course/level-up-in-css-advanced-selectors/',
-        '/course/html-css-how-to-build-a-website/'
+        '/blog/automate-with-webhooks/'
       ]
     }
   }

@@ -6,7 +6,6 @@
         <nuxt-link :to="params" v-else class="title no-underline text-slate-500">
             <slot></slot>
         </nuxt-link>
-
     </div>
 
 </template>
