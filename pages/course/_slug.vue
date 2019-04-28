@@ -10,7 +10,6 @@
 </template>
 <script>
 import contentful from "~/plugins/contentful.js";
-import VueMarkdown from 'vue-markdown';
 
 export default {
   props: {
@@ -18,9 +17,6 @@ export default {
       type: String,
       default: "https://source.unsplash.com/random"
     }
-  },
-    components: {
-    'vue-markdown': VueMarkdown
   },
   async asyncData({ env, params }) {
     //! Todo convert to action in store

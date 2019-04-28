@@ -57,4 +57,8 @@ a {
 .reset-link {
   @apply text-slate-500;
 }
+
+img {
+  @apply my-2;
+}
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2 class="text-base text-grey-500 font-semibold uppercase mb-6 mt-4 text-left">Web development courses</h2>
+    <VHeading heading="Courses" theme="discrete"/>
     <div v-if="!!courses.length" class="flex flex-wrap">
       <PreviewTile
         v-for="(course, i) in courses"

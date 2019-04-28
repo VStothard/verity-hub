@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2 class="text-base text-grey-500 font-semibold uppercase mb-6 mt-4 text-left">Latest blog posts</h2>
+    <VHeading heading="Latest blog posts" theme="discrete"/>
     <div v-if="!!stories.length" class="flex flex-wrap">
       <PreviewTile
         v-for="(story, i) in stories"
