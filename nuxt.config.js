@@ -3,6 +3,14 @@ import axios from 'axios'
 
 require('dotenv').config()
 
+//set up contentful client for dynamic routes
+const contentful = require('contentful')
+const config = {
+    space: process.env.CONTENTFUL_SPACE_ID,
+    accessToken: process.env.CONTENTFUL_ACCESS_TOKEN
+}
+const client = contentful.createClient(config)
+
 export default {
   mode: 'universal',
 
@@ -68,20 +76,14 @@ export default {
     CONTENTFUL_ACCESS_TOKEN: process.env.CONTENTFUL_ACCESS_TOKEN,
     CONTENTFUL_ACCESS_TOKEN: process.env.CONTENTFUL_ACCESS_TOKEN
   },
-  // generate: {
-  //   routes: [
-  //     '/blog/static-sites-are-great/',
-  //     '/blog/hello-world',
-  //     '/blog/automate-with-webhooks'
-  //   ]
-  // },
   generate: {
     routes: async function () {
-      return [
-        '/blog/static-sites-are-great/',
-        '/blog/hello-world/',
-        '/blog/automate-with-webhooks/'
-      ]
+      const entries = await client.getEntries({ content_type: "blogPost" });
+      const routes = []
+      entries.items.forEach(item => {
+        routes.push(`blog/${item.fields.slug}`)
+      })
+      return routes
     }
   }
 }
