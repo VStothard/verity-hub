@@ -55,6 +55,6 @@ a {
 }
 
 .reset-link {
-    color: initial
+  @apply text-slate-500;
 }
 </style>

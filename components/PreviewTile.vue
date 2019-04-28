@@ -14,7 +14,6 @@
   </div>
 </template>
 <script>
-import dayjs from 'dayjs'
 
 export default {
   props: {
@@ -26,20 +25,11 @@ export default {
       type: Object
     },
     slugName: {
-      type: String,
-      required: true
+      type: String
     },
     linkOut: {
       type: Boolean,
       default: false
-    }
-  },
-  filters: {
-    //TODO: create plugin to allow global use
-    date: function (value) {
-      if (!value) return ''
-      value = dayjs(value).format('DD.MM.YYYY') // display
-      return value
     }
   },
   computed: {
