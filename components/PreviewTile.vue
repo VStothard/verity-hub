@@ -1,19 +1,20 @@
 <template>
   <div>
-    <nuxt-link
-      :to="{ name: `${slugName}`, params: { slug: content.fields.slug }}"
-      class="title no-underline text-slate-500"
-    >
-      {{content.fields.slug}}
-      <!-- <div class="w-full h-64 bg-cover bg-center" :style="`background-image: url('${bgImage}')`"></div> -->
-      <h2 v-if="content.fields.title">{{content.fields.title}}</h2>
-      <p v-if="content.fields.publishDate">{{content.fields.publishDate}}</p>
-      <p v-if="content.fields.tags">{{content.fields.tags}}</p>
+    <inOutLink :link-out="linkOut" :params="linkParams">
+      <div id='tile-bg' class="w-full h-64 bg-cover bg-center rounded" :style="`background-image: url('https:${content.fields.featurePhoto.fields.file.url}')`"></div>
+      <p v-if="content.fields.publishDate" class="text-grey-500 text-sm mt-4">{{content.fields.publishDate | date}}</p>
+      <h2 v-if="content.fields.title" :class="{ 'mt-2' : content.fields.publishDate, 'mt-4' : !content.fields.publishDate, }">{{content.fields.title}}</h2>
       <p v-if="content.fields.description">{{content.fields.description}}</p>
-    </nuxt-link>
+      <p class="text-grey-400 mt-4 text-sm">
+        <span v-for="(tag, i) in content.fields.tags" :key="i">
+          <template v-if="i < 2">#{{tag}} </template>
+        </span>
+      </p>
+    </inOutLink>
   </div>
 </template>
 <script>
+
 export default {
   props: {
     bgImage: {
@@ -24,8 +25,20 @@ export default {
       type: Object
     },
     slugName: {
-      type: String,
-      required: true
+      type: String
+    },
+    linkOut: {
+      type: Boolean,
+      default: false
+    }
+  },
+  computed: {
+    linkParams() {
+      if (!this.linkOut) {
+        return { name: `${this.slugName}`, params: { slug: this.content.fields.slug }}
+      } else {
+        return this.content.fields.externalUrl
+      }
     }
   }
 };

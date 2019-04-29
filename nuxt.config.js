@@ -3,6 +3,15 @@ import axios from 'axios'
 
 require('dotenv').config()
 
+// Make contentful client accessible in config,
+// (can't use plugin as env variables are not accessible there until nuxt config is finished parsing)
+const contentful = require('contentful')
+const config = {
+    space: process.env.CONTENTFUL_SPACE_ID,
+    accessToken: process.env.CONTENTFUL_ACCESS_TOKEN
+}
+const client = contentful.createClient(config)
+
 export default {
   mode: 'universal',
 
@@ -10,7 +19,7 @@ export default {
   ** Headers of the page
   */
   head: {
-    title: pkg.name,
+    title: 'Verity Stothard | Front End Developer',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -30,6 +39,7 @@ export default {
   ** Global CSS
   */
   css: [
+    '~/assets/css/base.css',
     '~/assets/css/tailwind.css'
   ],
 
@@ -39,6 +49,7 @@ export default {
   plugins: [
     '~/plugins/global-components.js',
     '~/plugins/contentful.js',
+    '~/plugins/filters.js',
   ],
 
   /*
@@ -63,23 +74,16 @@ export default {
   },
   env: {
     CONTENTFUL_SPACE_ID: process.env.CONTENTFUL_SPACE_ID,
-    CONTENTFUL_ACCESS_TOKEN: process.env.CONTENTFUL_ACCESS_TOKEN,
     CONTENTFUL_ACCESS_TOKEN: process.env.CONTENTFUL_ACCESS_TOKEN
   },
-  // generate: {
-  //   routes: function () {
-  //     return axios.get(`/spaces/${process.env.CONTENTFUL_SPACE_ID}/environments/master/entries?content_type=blogPost?access_token=${process.env.CONTENTFUL_SPACE_ID}`)
-  //     .then((res) => {
-  //       return res.data.map((blog) => {
-  //         return '/blog/' + blog.id
-  //       })
-  //     })
-  //   }
-  // },
-
-  axios: {
-    // proxyHeaders: false
-    baseURL: 'https://cdn.contentful.com'
+  generate: {
+    routes: async function () {
+      const entries = await client.getEntries({ content_type: "blogPost" });
+      const routes = []
+      entries.items.forEach(item => {
+        routes.push(`blog/${item.fields.slug}`)
+      })
+      return routes
+    }
   }
-
 }

@@ -1,30 +1,26 @@
 <template>
   <div>
-    <template v-if="courses.length > 0">
+    <VHeading heading="Courses" theme="discrete"/>
+    <div v-if="!!courses.length" class="flex flex-wrap">
       <PreviewTile
         v-for="(course, i) in courses"
         :key="i"
         :content="course"
-        slug-name="course-slug"
+        :link-out="true"
+        class="w-full md:w-1/2 pb-8 tile-margin hover-tile"
       ></PreviewTile>
-    </template>
-    <template v-else>Fetching courses...</template>
+    </div>
+    <div v-else>fetching courses...</div>
   </div>
 </template>
-
 <script>
-import contentful from "~/plugins/contentful.js";
 export default {
-  data() {
+  async asyncData(context) {
+    let courses = await context.store.dispatch("courses/getAllCourses")
+
     return {
-      courses: []
-    };
-  },
-  async mounted() {
-    // Todo: move to asyncData
-    // get courses
-    const courses = await this.$store.dispatch("courses/getAllCourses");
-    this.courses = this.$store.getters["courses/getAllCourses"];
+        courses
+    }
   }
 };
 </script>
