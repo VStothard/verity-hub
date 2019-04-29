@@ -5,11 +5,11 @@
         <nuxt-link to="/" class="p-4 text-link">Blog</nuxt-link>
       </div>
       <div>
-        <nuxt-link to="/course" class="p-4 text-link">Courses</nuxt-link>
+        <nuxt-link to="/course" class="p-4 lg:pr-0 text-link">Courses</nuxt-link>
       </div>
-      <div>
+      <!-- <div>
         <nuxt-link to="/portfolio" class="p-4 lg:pr-0 text-link">Portfolio</nuxt-link>
-      </div>
+      </div> -->
     </div>
   </nav>
 </template>
