@@ -13,9 +13,6 @@
     </div>
     <div class="spacer">
       <h2>Colors</h2>
-      <p>
-        <span class="text-red">TODO:</span> create a color density plot for peach and slate
-      </p>
       <p>The colors used in this project are:</p>
       <ColorSpread></ColorSpread>
     </div>

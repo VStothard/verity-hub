@@ -20,15 +20,21 @@ export default {
 body {
   @apply text-slate-500
 }
-h1,
+
 h2,
 h3,
 h4 {
-  @apply mb-2 mt-4
+  @apply mb-2 mt-6
 }
+
+h1 {
+  @apply mb-4 mt-8
+}
+
 p {
   @apply mb-2;
 }
+
 a {
   @apply text-peach-500;
   text-decoration: none;
@@ -61,4 +67,25 @@ a {
 img {
   @apply my-2;
 }
+
+pre {
+  @apply bg-grey-200 py-8 px-4 rounded my-6 overflow-x-scroll;
+}
+
+code {
+  @apply bg-grey-200 px-2 rounded;
+}
+
+pre code {
+  @apply px-0 bg-transparent;
+}
+
+ul {
+  @apply my-4;
+}
+
+li {
+  @apply leading-loose;
+}
+
 </style>
