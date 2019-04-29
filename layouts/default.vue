@@ -6,7 +6,7 @@
         <side-nav/>
       </div>
       <div class="w-full lg:w-3/4">
-        <div class="shadow-md rounded p-8">
+        <div class="shadow-md rounded p-8 border border-grey-400">
           <nuxt/>
         </div>
         <VFooter></VFooter>

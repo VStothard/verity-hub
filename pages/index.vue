@@ -18,7 +18,7 @@ export default {
 
 <style lang="scss">
 body {
-  @apply text-slate-500
+  @apply text-slate-500 font-sans;
 }
 
 h2,

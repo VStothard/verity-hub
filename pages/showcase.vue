@@ -16,10 +16,10 @@
       <p>The colors used in this project are:</p>
       <ColorSpread></ColorSpread>
     </div>
-    <div class="spacer">
+    <!-- <div class="spacer">
       <h2>Typography</h2>
       <p>Typography throughout the site will be set gloablly using a base scss file.</p>
-    </div>
+    </div> -->
     <div class="spacer">
       <h2>Buttons</h2>
       <p>The button component uses props to set the type, state and theme of a button.</p>
