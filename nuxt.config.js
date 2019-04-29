@@ -3,7 +3,8 @@ import axios from 'axios'
 
 require('dotenv').config()
 
-// set up contentful client for dynamic routes
+// Make contentful client accessible in config,
+// (can't use plugin as env variables are not accessible there until nuxt config is finished parsing)
 const contentful = require('contentful')
 const config = {
     space: process.env.CONTENTFUL_SPACE_ID,
