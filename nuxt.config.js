@@ -49,7 +49,8 @@ export default {
   plugins: [
     '~/plugins/global-components.js',
     '~/plugins/contentful.js',
-    '~/plugins/filters.js'
+    '~/plugins/filters.js',
+    { src: '~/plugins/segment.js', ssr: false }
   ],
 
   /*
