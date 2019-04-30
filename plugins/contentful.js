@@ -1,8 +1,8 @@
 const contentful = require('contentful')
 
 const config = {
-    space: process.env.CONTENTFUL_SPACE_ID,
-    accessToken: process.env.CONTENTFUL_ACCESS_TOKEN
+    space: process.env.spaceID,
+    accessToken: process.env.accessToken
 }
 
 const client = contentful.createClient(config)

@@ -8,8 +8,7 @@ require('dotenv').config()
 const contentful = require('contentful')
 const config = {
     space: process.env.CONTENTFUL_SPACE_ID,
-    accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
-    segmentKey: process.env.SEGMENT_KEY
+    accessToken: process.env.CONTENTFUL_ACCESS_TOKEN
 }
 const client = contentful.createClient(config)
 
@@ -75,8 +74,9 @@ export default {
     }
   },
   env: {
-    CONTENTFUL_SPACE_ID: process.env.CONTENTFUL_SPACE_ID,
-    CONTENTFUL_ACCESS_TOKEN: process.env.CONTENTFUL_ACCESS_TOKEN
+    spaceID: process.env.CONTENTFUL_SPACE_ID,
+    accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+    segmentKey: process.env.SEGMENT_KEY
   },
   generate: {
     routes: async function () {
