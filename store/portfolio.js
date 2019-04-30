@@ -15,7 +15,6 @@ const actions = {
     async getAllPortfolioItems({ commit }) {
         const portfolioItems = await contentful.getEntries({ content_type: "portfolioItem" });
         commit('setPortfolioItems', portfolioItems.items)
-        console.log(portfolioItems, 9000)
         return portfolioItems.items
     }
 }

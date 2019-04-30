@@ -15,7 +15,6 @@ const actions = {
     async getAllCourses({ commit }) {
         const allCourses = await contentful.getEntries({ content_type: "skillshareCourse" });
         commit('setCourses', allCourses.items)
-        console.log(allCourses, 9000)
         return allCourses.items
     }
 }

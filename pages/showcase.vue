@@ -5,7 +5,7 @@
       <p>
         <a
           class="text-link"
-          href="https://sleepy-northcutt-e1bcd6.netlify.com/showcase/"
+          href="https://veritystothard.com/showcase/"
         >See it live here!</a>
       </p>
       <p>This file showcases the design guide and available components within this project.</p>
