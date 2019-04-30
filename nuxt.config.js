@@ -8,7 +8,8 @@ require('dotenv').config()
 const contentful = require('contentful')
 const config = {
     space: process.env.CONTENTFUL_SPACE_ID,
-    accessToken: process.env.CONTENTFUL_ACCESS_TOKEN
+    accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+    segmentKey: process.env.SEGMENT_KEY
 }
 const client = contentful.createClient(config)
 
