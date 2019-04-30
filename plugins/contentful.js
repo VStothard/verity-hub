@@ -5,8 +5,6 @@ const config = {
     accessToken: process.env.CONTENTFUL_ACCESS_TOKEN
 }
 
-console.log(config, 4000)
-
 const client = contentful.createClient(config)
 
 export default client
