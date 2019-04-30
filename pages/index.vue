@@ -7,8 +7,7 @@
 <script>
 export default {
   mounted () {
-    analytics.page("Home");
-
+    analytics.page('Home');
   },
   async asyncData(context) {
       let stories = await context.store.dispatch("blog/getAllPosts")
