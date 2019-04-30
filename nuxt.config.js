@@ -50,7 +50,8 @@ export default {
     '~/plugins/global-components.js',
     '~/plugins/contentful.js',
     '~/plugins/filters.js',
-    { src: '~/plugins/segment.js', ssr: false }
+    { src: '~/plugins/segment.js', ssr: false },
+    { src: '~/plugins/vue-lazyload', ssr: false }
   ],
 
   /*

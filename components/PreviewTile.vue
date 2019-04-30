@@ -1,7 +1,7 @@
 <template>
   <div>
     <inOutLink :link-out="linkOut" :params="linkParams">
-      <div id='tile-bg' class="w-full h-64 bg-cover bg-center rounded" :style="`background-image: url('https:${content.fields.featurePhoto.fields.file.url}')`"></div>
+      <div id='tile-bg' class="w-full h-64 bg-grey-200 bg-cover bg-center rounded" v-lazy:background-image="`https:${content.fields.featurePhoto.fields.file.url}`"></div>
       <p v-if="content.fields.publishDate" class="text-grey-500 text-sm mt-4">{{content.fields.publishDate | date}}</p>
       <h2 v-if="content.fields.title" :class="{ 'mt-2' : content.fields.publishDate, 'mt-4' : !content.fields.publishDate, }">{{content.fields.title}}</h2>
       <p v-if="content.fields.description">{{content.fields.description}}</p>
