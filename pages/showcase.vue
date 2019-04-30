@@ -61,6 +61,8 @@ export default {
     };
   },
   async mounted() {
+    analytics.page('Showcase');
+
     //Todo move this to Vuex store
     const allPosts = await contentful.getEntries({ content_type: "blogPost" });
 

@@ -22,6 +22,9 @@
 </template>
 <script>
 export default {
+  mounted () {
+    analytics.page('Portfolio');
+  },
   async asyncData(context) {
     let portfolioItems = await context.store.dispatch("portfolio/getAllPortfolioItems")
 

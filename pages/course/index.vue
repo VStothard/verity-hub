@@ -15,6 +15,9 @@
 </template>
 <script>
 export default {
+  mounted() {
+    analytics.page('Courses');
+  },
   async asyncData(context) {
     let courses = await context.store.dispatch("courses/getAllCourses")
 

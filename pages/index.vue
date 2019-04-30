@@ -6,13 +6,17 @@
 
 <script>
 export default {
-    async asyncData(context) {
-        let stories = await context.store.dispatch("blog/getAllPosts")
+  mounted () {
+    analytics.page("Home");
 
-        return {
-           stories
-        }
-    }
+  },
+  async asyncData(context) {
+      let stories = await context.store.dispatch("blog/getAllPosts")
+
+      return {
+          stories
+      }
+  }
 };
 </script>
 

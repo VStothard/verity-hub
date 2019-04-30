@@ -18,6 +18,9 @@ import contentful from "~/plugins/contentful.js";
 // import VueMarkdown from 'vue-markdown';
 
 export default {
+  mounted () {
+    analytics.page(`Blog - ${this.$route.params.slug}`);
+  },
   async asyncData({ env, params }) {
     //! Todo convert to action in store
     return await contentful
