@@ -12,6 +12,10 @@ const config = {
 }
 const client = contentful.createClient(config)
 
+const features = [
+  'Object.assign'
+].join('%2C')
+
 export default {
   mode: 'universal',
 
@@ -27,7 +31,8 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ]
+    ],
+    script: [{ src: `https://cdn.polyfill.io/v2/polyfill.min.js?features=${features}`, body: true }]
   },
 
   /*
