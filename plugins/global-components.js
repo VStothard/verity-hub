@@ -11,6 +11,7 @@ import LatestBlogPosts from '~/components/LatestBlogPosts.vue'
 import inOutLink from '~/components/inOutLink.vue'
 import VFooter from '~/components/VFooter.vue'
 import VHeading from '~/components/VHeading.vue'
+import SocialLinks from '~/components/SocialLinks.vue'
 
 Vue.component('VueMarkdown', VueMarkdown)
 Vue.component('VButton', VButton)
@@ -23,5 +24,6 @@ Vue.component('LatestBlogPosts', LatestBlogPosts)
 Vue.component('inOutLink', inOutLink)
 Vue.component('VFooter', VFooter)
 Vue.component('VHeading', VHeading)
+Vue.component('SocialLinks', SocialLinks)
 
 
